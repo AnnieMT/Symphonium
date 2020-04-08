@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+
+        <title>Music Visualizer Module</title>
+        
+        <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/icomoon/style.css">
+        <link rel="stylesheet" href="../static/css/viz-style.css">
+
+        <script src="../static/js/d3.js"></script>
+        <script src="../static/js/d3.hexbin.v0.min.js?5c6e4f0"></script>
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/mousetrap.js"></script>
+        <script src="../static/js/id3-minimized.js"></script>
+        <script src="../static/js/viz.js"></script>
+<!--        <script src="//connect.soundcloud.com/sdk.js"></script>-->
+        
+
+
+ <!--        <script> $(document).ready(function() { App.init(); }); </script> -->
+    </head>
+
+    <body>
+        <div id="dragover" class="dragover"></div>
+        <div id="tooltip" class="tooltip"></div>
+        
+        <div class='menu menu-open'>
+            <ul>
+                <li id='spin' viz-num='0' class='active'><div class='clicker'></div></li>
+                <li id='icosahedron' viz-num='1'><div class='clicker'></div></li>
+                <li id='equal' viz-num='2'><div class='clicker'></div></li>
+                <li id='hexbin' viz-num='3'><div class='clicker'></div></li>
+                <li id='circle' viz-num='4'><div class='clicker'></div></li>
+                <li id='spin' viz-num='5'><div class='clicker'></div></li>
+                <li id='hexbin' viz-num='6'><div class='clicker'></div></li>
+            </ul>
+        </div>
+
+        <div class='wrapper'>
+           <div class='vinyl-container'><i class="icon-vinyl"></i></div>
+
+            <div id="mp3_player" class='fade'>
+                <div id="audio_box"></div> <i id='fullscreen' class="icon-resize-full-alt"></i>
+            </div>
+
+            <div id='progressBar' class='progressBar'></div>
+            <div class='song-metadata'></div>
+            <div class='menu-controls'>
+                <i class="i icon-backward2"></i> 
+                <i class="i icon-pause" data-hovertext='Play / Pause'></i> 
+                <i class="i icon-forward2"></i>                
+                <i class="i icon-microphone" data-hovertext='Connect to the microphone on your computer.'></i> 
+            </div>
+
+            <div class='menu-wide'>
+
+                <div class='options'>
+                    <i class="i icon-menu"></i>
+                    <i class="i icon-loop-on"><span>Randomize visualization: <b>Off</b></span></i> 
+<!--                    <i class="i icon-expand"></i> -->
+                </div>
+
+                <div class="slider"><span>adjust sensitivity</span>
+                    <input min="1" max="100" value="20" id='slider' type="range">
+                </div>
+
+                <div class="dotstyle dotstyle-scaleup">
+                    <ul><span>Color Bar</span>
+                        <li class="current"><a class='zero' href="#">0</a></li>
+                        <li><a class='one' href="#" >1</a></li>
+                        <li><a class='two' href="#">2</a></li>
+                        <li><a class='three' href="#">3</a></li>
+                        <li><a class='four' href="#">4</a></li>
+                        <li><a class='five' href="#">5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

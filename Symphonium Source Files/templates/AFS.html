@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+
+        <title>Audio Fingerprinting Module - Results</title>
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- Bootstrap Core CSS -->
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        
+        <link rel="stylesheet" href="static/css/normalize.css">
+        <link rel="stylesheet" href="static/icomoon/style.css">
+        <link rel="stylesheet" href="static/css/afs-style.css">
+
+        <script src="static/js/d3.js"></script>
+        <script src="static/js/d3.hexbin.v0.min.js?5c6e4f0"></script>
+        <script src="static/js/jquery.js"></script>
+        <script src="static/js/mousetrap.js"></script>
+        <script src="static/js/id3-minimized.js"></script>
+        <script src="static/js/afs-viz.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+</head>
+
+   <body>
+
+{% if songDetails %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        
+        
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endif %}
+<script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script class="text-center" type="text/javascript"></script>
+
+       <!-- <input type="button" class="btn btn-success" style="background-color:black" onClick="window.history.back()" value="Back" /> -->
+
+<div class="container col-lg-12">
+    <div class="row">
+        <div class="col-lg-3">
+            <input type="button" class="btn btn-default" onClick="window.history.back()" value="Back" id="afs-back-button" />
+        </div><br><br>
+        <div class="col-md-6">   
+            <div class="song-details-section">     
+                <font>                
+                <h5 class="song-details">Song Name : <font> {{songDetails["song_name"]}} </font></h5>
+                <h5 class="song-details">Song ID : <font> {{songDetails["song_id"]}} </font></h5>
+                <!-- <h5 class="song-details">File Number : <font> {{songDetails["file_sha1"]}} </font></h5> -->
+                <h5 class="song-details">Confidence : <font> {{songDetails["confidence"]}}</font></h5>
+                <h5 class="song-details">Offset Seconds : <font> {{songDetails["offset_seconds"]}}</font></h5>
+                <h5 class="song-details">Offset : <font> {{songDetails["offset"]}}</font></h5>
+                </font>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+
+</body>
+
+</html>

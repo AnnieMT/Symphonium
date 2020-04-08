@@ -1,0 +1,79 @@
+<!-- Bootstrap Core CSS -->
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<!-- Custom CSS -->
+<link href="../static/css/symphonium.css" rel="stylesheet">
+
+   
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <font color="white">
+        <h2 class="text-center">Choose and Upload Music File..!!</h2>
+        </font>
+        <div class="row">
+        	<div class="col-sm-12 text-center">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="" method=post enctype=multipart/form-data>
+                    <span>
+                        <input  type="file" 
+                                style="visibility:hidden; width: 1px;" 
+                                id='${multipartFilePath}' name=file 
+                                onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> <!-- Chrome security returns 'C:\fakepath\'  -->
+                        
+                        <input class="btn btn-success" type="button" value="Choose..." onclick="$(this).parent().find('input[type=file]').click();"/> <!-- on button click fire the file click event -->
+                        &nbsp;
+                        <span  class="badge badge-important" ></span>
+                    </span>
+                    <p></p>
+                    <input class="btn btn-success" button style="background-color:lightgreen" type=submit value=Upload>
+                    
+                </form>
+                <audio controls autoplay>
+  				<source src="{{filename}}.ogg" type="audio/ogg">
+  				<source src="{{filename}}.mp3" type="audio/mpeg">
+  				<source src="{{filename}}.wav" type="audio/wav">
+	
+				Your browser does not support the audio element.
+				</audio>
+			
+            </div>
+            </div>
+            <div class="col-md-3"></div>
+            <p></p>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+{% if filename %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <font color="white">
+            <h3 class="text-center"> For Music Sheet --> <a href="/static/sheet_notes/{{filename}}.pdf"><font color="green">Click HERE</font> </a>   </h3>
+            </font>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endif %}
+<script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</div>

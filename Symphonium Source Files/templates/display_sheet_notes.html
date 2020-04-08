@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+                <audio controls autoplay>
+  				<source src="/static/sheet_notes/{{filename}}" type="audio/ogg">
+  				<source src="/static/sheet_notes/{{filename}}" type="audio/mpeg">
+  				<source src="/static/sheet_notes/{{filename}}.wav" type="audio/wav">
+	
+				Your browser does not support the audio element.
+				</audio>
+{% block body %}
+
+
+<div class="container">
+	   
+    <object data="{{pdfFile}}" type="application/text" width="1000" height="1100">
+    
+  	click to open SheetMusic : <a href="/static/sheet_notes/{{filename}}">{{filename}}</a>
+	</object>
+</div>
+{% endblock %}
